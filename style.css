@@ -1,0 +1,286 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: #f1f5f9;
+}
+
+nav {
+    background: linear-gradient(90deg, #2563eb, #1e3a8a);
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+nav a:hover {
+    opacity: 0.8;
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 40px auto;
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+h2 {
+    margin-bottom: 20px;
+    color: #1e3a8a;
+}
+
+input, select {
+    padding: 10px;
+    margin: 8px 5px 15px 0;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+button {
+    padding: 8px 14px;
+    border-radius: 8px;
+    border: none;
+    background: #2563eb;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #1e40af;
+}
+
+.delete-btn {
+    background: #dc2626;
+}
+
+.delete-btn:hover {
+    background: #991b1b;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #2563eb;
+    color: white;
+    padding: 10px;
+}
+
+td {
+    padding: 10px;
+    text-align: center;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+tr:hover {
+    background: #f9fafb;
+}
+
+.stat-box {
+    flex: 1;
+    min-width: 200px;
+    background: #2563eb;
+    color: white;
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.container {
+    overflow-x: auto;
+}
+
+/* ================= MOBILE RESPONSIVE ================= */
+
+@media (max-width: 768px) {
+
+    nav {
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+    }
+
+    .container {
+        width: 95%;
+        padding: 20px;
+        margin: 20px auto;
+    }
+
+    input, select, button {
+        width: 100%;
+        margin: 8px 0;
+    }
+
+    table {
+        font-size: 12px;
+    }
+
+    th, td {
+        padding: 6px;
+    }
+
+    .stat-box {
+        width: 100%;
+        margin-bottom: 15px;
+    }
+
+    /* Make dashboard stat boxes stack vertically */
+    .container > div {
+        flex-direction: column !important;
+    }
+
+    canvas {
+        width: 100% !important;
+        height: auto !important;
+    }
+
+}
+
+/* ================= NAVBAR ================= */
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 25px;
+    background: #2563eb;
+    color: white;
+}
+
+.logo {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+}
+
+.nav-right {
+    display: flex;
+    gap: 10px;
+}
+
+.hamburger {
+    display: none;
+    font-size: 22px;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+.theme-toggle {
+    font-size: 18px;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 768px) {
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        background: #1e3a8a;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        padding: 15px;
+    }
+
+    .nav-links.show {
+        display: flex;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+}
+
+/* ================= MOBILE MENU ================= */
+
+.mobile-menu {
+    display: none;
+    flex-direction: column;
+    background: #1e3a8a;
+    padding: 15px;
+}
+
+.mobile-menu a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 0;
+}
+
+.mobile-menu.show {
+    display: flex;
+}
+
+/* ================= DARK MODE ================= */
+
+body.dark {
+    background: #121212;
+    color: #f1f1f1;
+}
+
+body.dark .container {
+    background: #1e1e1e;
+}
+
+body.dark input,
+body.dark select {
+    background: #2a2a2a;
+    color: white;
+    border: 1px solid #444;
+}
+
+body.dark table {
+    background: #1e1e1e;
+    color: white;
+}
+
+body.dark .navbar {
+    background: #111827;
+}
+
+body.dark .mobile-menu {
+    background: #1f2937;
+}
+
+/* ================= MOBILE RESPONSIVE ================= */
+
+@media (max-width: 768px) {
+
+    .hamburger {
+        display: block;
+    }
+
+}

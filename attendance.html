@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Attendance</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#2563eb">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="logo">NAIR Classes</div>
+
+    <div class="nav-links">
+        <a href="dashboard.html">Dashboard</a>
+        <a href="index.html">Students</a>
+        <a href="attendance.html">Attendance</a>
+        <a href="fees.html">Fees</a>
+        <a onclick="logout()" style="cursor:pointer;">Logout</a>
+    </div>
+
+    <div class="nav-right">
+        <button class="theme-toggle" onclick="toggleTheme()">🌙</button>
+        <button class="hamburger" onclick="toggleMenu()">☰</button>
+    </div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+    <a href="dashboard.html">Dashboard</a>
+    <a href="index.html">Students</a>
+    <a href="attendance.html">Attendance</a>
+    <a href="fees.html">Fees</a>
+    <a onclick="logout()">Logout</a>
+</div>
+
+<div class="container">
+    <h2>Attendance</h2>
+
+    <select id="attendanceStudent"></select>
+    <input type="date" id="attendanceDate">
+    <select id="attendanceStatus">
+        <option value="Present">Present</option>
+        <option value="Absent">Absent</option>
+    </select>
+    <button onclick="markAttendance()">Save</button>
+
+    <table id="attendanceTable"></table>
+</div>
+
+<script src="script.js"></script>
+<script>
+checkLogin();
+</script>
+</body>
+</html>
