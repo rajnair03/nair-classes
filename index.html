@@ -25,6 +25,7 @@
         <button class="hamburger" onclick="toggleMenu()">☰</button>
     </div>
 </nav>
+
 <div class="mobile-menu" id="mobileMenu">
     <a href="dashboard.html">Dashboard</a>
     <a href="index.html">Students</a>
@@ -35,13 +36,16 @@
 
 <div class="container">
     <h2>Students</h2>
-    
+
+    <!-- SEARCH -->
     <input 
-    type="text" 
-    id="searchStudent" 
-    placeholder="Search student by name..." 
-    onkeyup="filterStudents()"
-/>
+        type="text" 
+        id="searchStudent" 
+        placeholder="Search student by name..." 
+        onkeyup="filterStudents()"
+    />
+
+    <!-- ADD STUDENT FORM -->
     <input type="text" id="name" placeholder="Student Name">
     <input type="text" id="parent" placeholder="Parent Name">
     <input type="text" id="phone" placeholder="Phone">
@@ -49,12 +53,28 @@
     <input type="number" id="fee" placeholder="Monthly Fee">
     <button onclick="addStudent()">Add Student</button>
 
+    <!-- STUDENT TABLE -->
     <table id="studentTable"></table>
+
+    <!-- 🔥 EDIT STUDENT SECTION (NEW) -->
+    <div id="studentDetails" style="display:none; margin-top:30px;">
+        <h3>Edit Student Details</h3>
+
+        <input type="text" id="editName" placeholder="Student Name">
+        <input type="text" id="editParent" placeholder="Parent Name">
+        <input type="text" id="editPhone" placeholder="Phone">
+        <input type="text" id="editClass" placeholder="Class">
+        <input type="number" id="editFee" placeholder="Monthly Fee">
+
+        <button onclick="saveStudentEdit()">Save Changes</button>
+    </div>
+
 </div>
 
 <script src="script.js"></script>
 <script>
 checkLogin();
 </script>
+
 </body>
 </html>
